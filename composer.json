@@ -1,0 +1,18 @@
+{
+  "name": "sunxyw/velvet-protocol-php",
+  "type": "library",
+  "authors": [
+    {
+      "name": "sunxyw",
+      "email": "xy2496419818@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Sunxyw\\Velvet\\": "src/"
+    }
+  },
+  "scripts": {
+    "test": "tools/phpunit --bootstrap vendor/autoload.php --testdox tests"
+  }
+}
