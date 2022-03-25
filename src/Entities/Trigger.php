@@ -8,7 +8,7 @@ class Trigger
 {
     public string $type;
 
-    public string $data;
+    public array $data;
 
     /**
      * Trigger constructor.
@@ -16,7 +16,7 @@ class Trigger
      * @param string $type
      * @param string $data
      */
-    public function __construct(string $type, string $data)
+    public function __construct(string $type, array $data)
     {
         $this->type = $type;
         $this->data = $data;
