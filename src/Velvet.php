@@ -70,8 +70,8 @@ class Velvet
     private static function mapDataToObject(array $data, string $className)
     {
         $object = new $className();
-        foreach (get_class_vars($className) as $key => $value) {
-            $key = strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $key));
+        foreach (get_class_vars($className) as $object_key => $value) {
+            $key = strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $object_key));
             if (isset($data[$key])) {
                 if ($key === 'trigger') {
                     $type = $data[$key]['type'];
@@ -79,7 +79,7 @@ class Velvet
                     $data = $data[$key];
                     $data[$key] = new Trigger($type, $data);
                 }
-                $object->$key = $data[$key];
+                $object->$object_key = $data[$key];
             } else {
                 throw new InvalidArgumentException("Missing property '$key' in data.");
             }
